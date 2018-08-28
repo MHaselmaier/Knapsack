@@ -1,24 +1,21 @@
 package demo;
 
-import alg.CGreedy;
-import alg.CRecursive;
-import util.CResult;
-import util.CUtils;
-import kpp.CProblem;
+import alg.Greedy;
+import alg.GreedySplit;
+import alg.Recursive;
+import util.Result;
+import util.Utils;
+import kpp.Problem;
 
-/*
- * 
- * 	Default demo to show general usage of the classes
- * 
+/**
+ * 	Default demo to show general usage of the classes.
  */
-
-
-public class demo1 {
-
-	public static void main(String[] args){
-		
+public class demo1
+{
+	public static void main(String[] args)
+	{
 		// create a demo problem:
-		CProblem problem = new CProblem();
+		Problem problem = new Problem();
 		// show the problem:
 		System.out.println(problem.toString());
 		
@@ -27,15 +24,14 @@ public class demo1 {
 //		long recursive = CUtils.measureTime(new CRecursive(), problem);
 //		
 //		System.out.print(String.format("Greedy time: %d, Recursive time: %d", greedy, recursive));
-//		
 		
-		CResult greedyResult = CUtils.getResult(new CGreedy(), problem);
+		Result greedyResult = Utils.getResult(new Greedy(), problem);
 		System.out.println(greedyResult.toString());
-
-		CResult recursiveResult = CUtils.getResult(new CRecursive(), problem);
-		System.out.println(recursiveResult.toString());
 		
-	}
-	
-	
+		Result greedySplitResult = Utils.getResult(new GreedySplit(), problem);
+		System.out.println(greedySplitResult.toString());
+
+		Result recursiveResult = Utils.getResult(new Recursive(), problem);
+		System.out.println(recursiveResult.toString());	
+	}	
 }

@@ -1,8 +1,8 @@
 package test;
 
 import static org.junit.Assert.*;
-import kpp.CElement;
-import kpp.CKnapSack;
+import kpp.Element;
+import kpp.KnapSack;
 import kpp.KPOverflowException;
 
 import org.junit.Test;
@@ -12,8 +12,8 @@ public class Test_CKnapSack {
 	@Test
 	public void test_constructor() {
 	
-		CKnapSack ks = new CKnapSack(0);
-		assertTrue(ks instanceof CKnapSack);
+		KnapSack ks = new KnapSack(0);
+		assertTrue(ks instanceof KnapSack);
 		
 	}
 	
@@ -22,9 +22,9 @@ public class Test_CKnapSack {
 		
 		int maxCapacity = (int)(Math.random() * 100 + 1);
 		System.out.println("Testing for capacity: " + maxCapacity);
-		CKnapSack ks = new CKnapSack(maxCapacity);
+		KnapSack ks = new KnapSack(maxCapacity);
 		
-		assertTrue(maxCapacity == ks.getMaxCapacity());
+		assertTrue(maxCapacity == ks.getMaxWeight());
 
 		// fill ks with elements until maxCapacity is reached
 		
@@ -33,7 +33,7 @@ public class Test_CKnapSack {
 		do
 		{
 			int capacity = (int)(Math.random()* freeCap + 1);
-			CElement element = new CElement(capacity, 0);
+			Element element = new Element(capacity, 0);
 			
 			try {
 				ks.addElement(element);

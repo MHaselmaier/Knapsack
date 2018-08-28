@@ -1,7 +1,7 @@
 package test;
 
 import static org.junit.Assert.*;
-import kpp.CElement;
+import kpp.Element;
 
 import org.junit.Test;
 
@@ -9,14 +9,14 @@ public class Test_CElement {
 
 	@Test
 	public void test_constructort() {
-		CElement el = new CElement(0, 0);
-		assertTrue(el instanceof CElement);
+		Element el = new Element(0, 0);
+		assertTrue(el instanceof Element);
 	}
 	
 	@Test
 	public void test_print(){
-		CElement el = new CElement(1,4);
-		el.print();
+		Element el = new Element(1,4);
+		System.out.println(el);
 	}
 
 }
